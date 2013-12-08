@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">restclient</string>
+    <string name="app_name">REST Client</string>
     <string name="menu_settings">Settings</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_add_header">Add Header</string>
+    <string name="menu_reset">Reset</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Request</string>
+    <string name="title_section2">Response</string>
+    <string name="label_url">URL:</string>
+    <string name="label_headers">Headers</string>
+    <string name="label_body">Body</string>
+    <string name="et_body_hint">Request Body goes here</string>
+    <string name="et_url_hint">http://www.helloworld.com</string>
+    <string name="label_method">Method</string>
+    <string name="label_header_name">Name</string>
+    <string name="label_header_value">Value</string>
+    <string name="hint_header_name">example: Content-Type</string>
+    <string name="hint_header_value">example: application/json</string>
+    <string name="bt_text_send">Send</string>
+    <string name="bt_text_okay">Okay</string>
+    <string name="bt_text_cancel">Cancel</string>
+    <string name="title_header_dialog">Request Header</string>
+
+    <string-array name="method_array">
+        <item>GET</item>
+        <item>POST</item>
+        <item>PUT</item>
+        <item>DELETE</item>
+        <item>HEAD</item>
+        <item>TRACE</item>
+        <item>OPTIONS</item>
+    </string-array>
 
 </resources>

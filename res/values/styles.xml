@@ -13,8 +13,10 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+
+    <style name="DialogTheme" parent="@android:style/Theme.Holo.Dialog"></style>
 
 </resources>

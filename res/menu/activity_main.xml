@@ -1,9 +1,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/menu_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/menu_settings"/>
+        android:id="@+id/menu_overflow"
+        android:icon="@drawable/ic_menu_moreoverflow_normal_holo_light"
+        android:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/menu_save"
+                android:showAsAction="always"
+                android:title="@string/menu_save"/>
+            <item
+                android:id="@+id/menu_add_header"
+                android:showAsAction="always"
+                android:title="@string/menu_add_header"/>
+            <item
+                android:id="@+id/menu_Reset"
+                android:showAsAction="always"
+                android:title="@string/menu_reset"/>
+        </menu>
+    </item>
 
 </menu>
