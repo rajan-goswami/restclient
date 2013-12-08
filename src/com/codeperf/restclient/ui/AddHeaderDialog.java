@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.codeperf.restclient.R;
+import com.codeperf.restclient.common.Constants;
 
 public class AddHeaderDialog extends DialogFragment {
 
@@ -40,14 +41,16 @@ public class AddHeaderDialog extends DialogFragment {
 
 		Bundle args = getArguments();
 		if (args != null) {
-			if (args.getBoolean("HEADER_MODIFY_FLAG")) {
+			if (args.getBoolean(Constants.BUNDLE_HEADER_MODIFY_FLAG)) {
 				EditText etHeaderName = (EditText) v
 						.findViewById(R.id.et_header_name);
 				EditText etHeaderValue = (EditText) v
 						.findViewById(R.id.et_header_value);
 				Log.d("RESTClient", " etHeaderName - " + etHeaderName);
-				etHeaderName.setText(args.getString("HEADER_NAME"));
-				etHeaderValue.setText(args.getString("HEADER_VALUE"));
+				etHeaderName.setText(args
+						.getString(Constants.BUNDLE_HEADER_NAME));
+				etHeaderValue.setText(args
+						.getString(Constants.BUNDLE_HEADER_VALUE));
 			}
 		}
 

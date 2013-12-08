@@ -6,7 +6,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.codeperf.restclient.R;
+import com.codeperf.restclient.common.Constants;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener, AddHeaderDialog.AddHeaderDialogListener {
@@ -82,7 +82,7 @@ public class MainActivity extends FragmentActivity implements
 		case R.id.menu_add_header:
 			DialogFragment headerDialog = new AddHeaderDialog();
 			Bundle args = new Bundle();
-			args.putBoolean("HEADER_MODIFY_FLAG", false);
+			args.putBoolean(Constants.BUNDLE_HEADER_MODIFY_FLAG, false);
 			headerDialog.setArguments(args);
 			headerDialog.show(getFragmentManager(), "Request Header");
 
@@ -163,7 +163,7 @@ public class MainActivity extends FragmentActivity implements
 
 		Bundle args = dialog.getArguments();
 		if (args != null) {
-			if (!args.getBoolean("HEADER_MODIFY_FLAG")) {
+			if (!args.getBoolean(Constants.BUNDLE_HEADER_MODIFY_FLAG)) {
 
 				// Prepeare a new view and attach to linear_headers_layout
 				final LinearLayout headersLayout = (LinearLayout) findViewById(R.id.linear_headers_layout);
@@ -198,16 +198,16 @@ public class MainActivity extends FragmentActivity implements
 
 						DialogFragment headerDialog = new AddHeaderDialog();
 						Bundle args = new Bundle();
-						args.putBoolean("HEADER_MODIFY_FLAG", true);
-						args.putInt("HEADER_RESOURCE_ID", headerId);
+						args.putBoolean(Constants.BUNDLE_HEADER_MODIFY_FLAG,
+								true);
+						args.putInt(Constants.BUNDLE_HEADER_RESOURCE_ID,
+								headerId);
 
 						TextView tv = (TextView) v;
 						String text = tv.getText().toString();
 						String splits[] = text.split(":", 2);
-						Log.d("RESTClient", splits[0]);
-						Log.d("RESTClient", splits[1]);
-						args.putString("HEADER_NAME", splits[0]);
-						args.putString("HEADER_VALUE", splits[1]);
+						args.putString(Constants.BUNDLE_HEADER_NAME, splits[0]);
+						args.putString(Constants.BUNDLE_HEADER_VALUE, splits[1]);
 						headerDialog.setArguments(args);
 						headerDialog.show(getFragmentManager(),
 								"Request Header");
@@ -224,8 +224,6 @@ public class MainActivity extends FragmentActivity implements
 								.findViewById(headerId);
 						((ViewGroup) headersLayout).removeView(headerView);
 
-						Log.d("RESTClient",
-								"ChildCount ==" + headersLayout.getChildCount());
 						if (headersLayout.getChildCount() == 1) {
 							headersLayout.setVisibility(View.GONE);
 						}
@@ -237,7 +235,8 @@ public class MainActivity extends FragmentActivity implements
 				LinearLayout headersLayout = (LinearLayout) findViewById(R.id.linear_headers_layout);
 
 				LinearLayout headerView = (LinearLayout) headersLayout
-						.findViewById(args.getInt("HEADER_RESOURCE_ID"));
+						.findViewById(args
+								.getInt(Constants.BUNDLE_HEADER_RESOURCE_ID));
 				if (headerView != null) {
 					TextView tvHeader = (TextView) headerView
 							.findViewById(R.id.tv_header);
