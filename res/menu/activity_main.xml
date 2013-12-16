@@ -1,9 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
+        android:id="@+id/menu_overflow1"
+        android:actionLayout="@layout/progress_image_layout"
+        android:showAsAction="always"
+        android:title=""/>
+    <item
         android:id="@+id/menu_overflow"
         android:icon="@drawable/ic_menu_moreoverflow_normal_holo_light"
-        android:showAsAction="always">
+        android:showAsAction="always"
+        android:title="">
         <menu>
             <item
                 android:id="@+id/menu_save"

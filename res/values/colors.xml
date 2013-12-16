@@ -4,5 +4,5 @@
     <color name="grey">#C7BEBE</color>
     <color name="white">#FFFFFF</color>
     <color name="cyan">#A7D3FF</color>
-
+<color name="pressed_rest">#CC1F4DBD</color>
 </resources>
